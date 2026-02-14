@@ -3,184 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shopbree - Phones, Laptops & Accessories</title>
+
+<title>Shopbree - Official Store</title>
 
 <style>
 
 body{
+font-family:Arial;
 margin:0;
-font-family:Arial, sans-serif;
-background:#F5F5F7;
-color:#222;
+background:#f4f4f4;
 }
 
 header{
-background:#111;
-color:white;
-padding:15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-header h1{
+background:black;
 color:#FFD60A;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin:0 15px;
+padding:15px;
+text-align:center;
+font-size:24px;
+font-weight:bold;
 }
 
 .hero{
 background:#0A84FF;
 color:white;
+padding:40px;
 text-align:center;
-padding:60px 20px;
-}
-
-.hero button{
-background:#FFD60A;
-border:none;
-padding:15px 25px;
-font-size:16px;
-cursor:pointer;
-border-radius:5px;
 }
 
 .products{
-padding:40px 20px;
+padding:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:15px;
+}
+
+.card{
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
 text-align:center;
 }
 
-.product-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
-gap:20px;
-}
-
-.product{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-.product img{
+.card img{
 width:100%;
 border-radius:10px;
 }
 
-.contact{
-background:#111;
+.price{
+color:#0A84FF;
+font-weight:bold;
+font-size:18px;
+}
+
+button{
+background:#25D366;
+border:none;
+padding:10px;
 color:white;
-text-align:center;
-padding:40px;
+border-radius:5px;
+cursor:pointer;
 }
 
 footer{
+background:black;
+color:white;
 text-align:center;
 padding:15px;
-background:#000;
-color:#FFD60A;
-}
-
-.whatsapp-btn{
-display:inline-block;
-margin-top:15px;
-background:#25D366;
-color:white;
-padding:12px 20px;
-text-decoration:none;
-border-radius:5px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
-<h1>Shopbree</h1>
-
-<nav>
-<a href="#">Home</a>
-<a href="#">Shop</a>
-<a href="#">Contact</a>
-</nav>
-
+SHOPBREE OFFICIAL STORE
 </header>
 
 <section class="hero">
 
-<h2>Your #1 Trusted Tech & Accessories Store</h2>
+<h2>Phones, Laptops, Fashion & Accessories</h2>
 
-<p>Phones • Laptops • EarPods • Headsets • Chargers • Fashion • Provisions</p>
-
-<button onclick="alert('Welcome to Shopbree! Start Shopping Now.')">
-Shop Now
-</button>
+<p>Best prices. Trusted store.</p>
 
 </section>
 
 <section class="products">
 
-<h2>Our Products</h2>
+<h2>Phones</h2>
 
-<div class="product-grid">
+<div class="grid">
 
-<div class="product">
+<div class="card">
 <img src="https://via.placeholder.com/200">
-<h3>Smartphones</h3>
-<p>Latest Android & iPhones</p>
+<h3>iPhone 13</h3>
+<p class="price">GHS 6,000</p>
+<button onclick="order('iPhone 13')">Order on WhatsApp</button>
 </div>
 
-<div class="product">
+<div class="card">
 <img src="https://via.placeholder.com/200">
-<h3>Laptops</h3>
-<p>HP, Dell, Lenovo & more</p>
+<h3>Samsung S21</h3>
+<p class="price">GHS 4,500</p>
+<button onclick="order('Samsung S21')">Order on WhatsApp</button>
 </div>
 
-<div class="product">
+</div>
+
+<h2>Laptops</h2>
+
+<div class="grid">
+
+<div class="card">
 <img src="https://via.placeholder.com/200">
-<h3>Accessories</h3>
-<p>Chargers, Headsets, EarPods</p>
+<h3>HP Laptop</h3>
+<p class="price">GHS 5,000</p>
+<button onclick="order('HP Laptop')">Order on WhatsApp</button>
 </div>
 
-<div class="product">
+</div>
+
+<h2>Accessories</h2>
+
+<div class="grid">
+
+<div class="card">
 <img src="https://via.placeholder.com/200">
-<h3>Fashion</h3>
-<p>Male & Female Wears</p>
-</div>
-
-<div class="product">
-<img src="https://via.placeholder.com/200">
-<h3>Provisions</h3>
-<p>Quality daily essentials</p>
+<h3>AirPods</h3>
+<p class="price">GHS 500</p>
+<button onclick="order('AirPods')">Order on WhatsApp</button>
 </div>
 
 </div>
-
-</section>
-
-<section class="contact">
-
-<h2>Contact Shopbree</h2>
-
-<p>Order now via WhatsApp</p>
-
-<a class="whatsapp-btn" href="https://wa.me/233XXXXXXXXX">
-Chat on WhatsApp
-</a>
 
 </section>
 
 <footer>
 
-© 2026 Shopbree. All Rights Reserved.
+© 2026 Shopbree. All rights reserved.
 
 </footer>
+
+<script>
+
+function order(product){
+
+let phone = "233XXXXXXXXX";
+
+let message = "Hello Shopbree, I want to order " + product;
+
+let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+window.open(url);
+
+}
+
+</script>
 
 </body>
 </html>
